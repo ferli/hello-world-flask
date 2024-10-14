@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, Indonesia!'
 
 if __name__ == '__main__':
     # Use environment variable to determine if we are in production or development
