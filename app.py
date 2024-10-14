@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 
 app = Flask(__name__)
@@ -7,4 +8,9 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    # Use environment variable to determine if we are in production or development
+    env = os.getenv('FLASK_ENV', 'development')
+    debug = env == 'development'
+    
+    # If environment is development, debug mode will be enabled
+    app.run(debug=debug, host='0.0.0.0')
